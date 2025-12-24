@@ -73,7 +73,7 @@
         "content_background_color": "#ffffff",
         "content_background_opacity": 40,
         "desktop_buttons_side_by_side": true,
-        "desktop_content_position": "top-center",
+        "desktop_content_position": "top-left",
         "desktop_content_alignment": "left",
         "desktop_content_width": 65,
         "mobile_content_alignment": "center",
