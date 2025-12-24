@@ -48,7 +48,7 @@
         "button_NzNLxg": {
           "type": "button",
           "settings": {
-            "button_label": "Lraen More",
+            "button_label": "Learn More",
             "button_link": "shopify://collections",
             "button_style": "custom",
             "button_bg_color": "#ffffff",
