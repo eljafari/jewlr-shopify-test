@@ -1,0 +1,11 @@
+{
+  "scripts": {
+    "dev": "shopify theme dev",
+    "push": "shopify theme push",
+    "pull": "shopify theme pull"
+  },
+  "devDependencies": {
+    "@shopify/cli": "^3.88.0",
+    "@shopify/prettier-plugin-liquid": "^1.10.0"
+  }
+}

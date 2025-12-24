@@ -1,0 +1,322 @@
+:root {
+    --color-primary: #4268ff;
+    --color-secondary: #f7e4c0;
+    --breakpoint-xsmall: 20rem;
+    /* 320px */
+    --breakpoint-mobile: 24rem;
+    /* 384px */
+    --breakpoint-tablet: 48rem;
+    /* 768px */
+    --breakpoint-desktop: 64rem;
+    /* 1024px */
+    --breakpoint-large: 80rem;
+    /* 1280px */
+    --breakpoint-widescreen: 90rem;
+    /* 1440px */
+    --breakpoint-xlarge: 120rem;
+    /* 1920px */
+}
+
+.jewlr-custom-banner {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.jewlr-custom-banner__media {
+    position: relative;
+    width: 100%;
+}
+
+.jewlr-custom-banner__overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--banner-overlay-color);
+    z-index: 1;
+}
+
+.jewlr-custom-banner__image {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+}
+
+/* Mobile First - Show Mobile Image by default, Hide Desktop Image */
+.jewlr-custom-banner__image--desktop {
+    display: none;
+}
+
+.jewlr-custom-banner__image--mobile {
+    display: block;
+}
+
+.jewlr-custom-banner__content {
+    padding: 20px;
+    /* Mobile Padding */
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.jewlr-custom-banner__heading-wrapper {
+    width: 100%;
+}
+
+.jewlr-custom-banner__heading {
+    margin: 0 0 1rem;
+    font-size: var(--banner-heading-size-mobile, 1.5rem);
+    color: var(--banner-heading-color, inherit);
+    font-weight: 700;
+    /* Bold */
+}
+
+.jewlr-custom-banner__text-wrapper {
+    width: 100%;
+}
+
+.jewlr-custom-banner__text {
+    margin: 0 0 1.5rem;
+    font-size: var(--banner-text-size-mobile, 1rem);
+    color: var(--banner-text-color, inherit);
+    font-weight: 600;
+    /* Semi-Bold */
+}
+
+.jewlr-custom-banner__button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 16px;
+    height: 44px;
+    max-width: 276px;
+    width: 100%;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background 0.2s ease;
+    border: none;
+    cursor: pointer;
+    box-sizing: border-box;
+}
+
+/* Primary Button */
+.jewlr-custom-banner__button--primary {
+    background-color: #000;
+    color: #fff;
+}
+
+.jewlr-custom-banner__button--primary:hover {
+    background-image: linear-gradient(rgba(255, 255, 255, 0.2) 0 0);
+}
+
+.jewlr-custom-banner__button--primary:active {
+    background-image: linear-gradient(rgba(255, 255, 255, 0.4) 0 0);
+}
+
+/* Secondary Button */
+.jewlr-custom-banner__button--secondary {
+    background-color: #4268ff;
+    color: #fff;
+}
+
+.jewlr-custom-banner__button--secondary:hover {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.2) 0 0);
+}
+
+.jewlr-custom-banner__button--secondary:active {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4) 0 0);
+}
+
+/* Custom Button Modifier */
+.jewlr-custom-banner__button--custom {
+    background-color: var(--banner-button-bg-custom, #000);
+    color: var(--banner-button-text-custom, #fff);
+    font-size: var(--banner-button-size-custom, 1rem);
+}
+
+/* Visibility Control */
+@media screen and (max-width: 47.9rem) {
+    .jewlr-custom-banner__content--mobile-hidden {
+        display: none !important;
+    }
+
+    /* Mobile Overlay Layout */
+    .jewlr-custom-banner--mobile-overlay .jewlr-custom-banner__content {
+        position: absolute;
+        top: auto;
+        align-items: center;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100%;
+        height: 100%;
+        max-width: 100%;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        /* Aligns content based on settings */
+    }
+
+    /* Icon Mobile Handling */
+    .jewlr-custom-banner__icon-wrapper--mobile {
+        display: flex;
+        margin-left: 0.5rem;
+    }
+
+    .jewlr-custom-banner__heading-wrapper {
+        display: flex;
+    }
+
+    .jewlr-custom-banner__icon-wrapper--desktop {
+        display: none !important;
+    }
+}
+
+/* Breakpoint: Tablet and up - Switch to Desktop Image if preferred, or adjust layout */
+@media screen and (min-width: 48rem) {
+
+    .jewlr-custom-banner__heading {
+        /* Scaling Ratios based on user request: 72/64 = 1.125, 34/28 = ~1.214 */
+        font-size: calc(var(--banner-heading-size-mobile) * 1.125);
+    }
+
+    .jewlr-custom-banner__text {
+        font-size: 23px;
+        /* Tablet Size */
+    }
+
+    /* 768px --breakpoint-tablet */
+    .jewlr-custom-banner__image--desktop {
+        display: block;
+    }
+
+    .jewlr-custom-banner__image--mobile {
+        display: none;
+    }
+
+    .jewlr-custom-banner__button {
+        width: 100%;
+    }
+}
+
+/* Breakpoint: Desktop and up */
+@media screen and (min-width: 64rem) {
+    .jewlr-custom-banner__heading {
+        font-size: var(--banner-heading-size-desktop, 2rem);
+    }
+
+    .jewlr-custom-banner__text {
+        font-size: var(--banner-text-size-desktop, 1.25rem);
+    }
+}
+
+/* Breakpoint: Tablet Layout continues (48rem+) but fonts update at 64rem */
+@media screen and (min-width: 48rem) {
+
+    /* Desktop Content Layout (applied from tablet up) */
+    .jewlr-custom-banner__content {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        max-width: 100%;
+        padding: 40px;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+
+    /* Icon Desktop Handling */
+    .jewlr-custom-banner__icon-wrapper--mobile {
+        display: none !important;
+    }
+
+    .jewlr-custom-banner__text-wrapper {
+        display: flex;
+        align-items: center;
+        margin-bottom: 1.5rem;
+    }
+
+    .jewlr-custom-banner__icon-wrapper--desktop {
+        display: block;
+        flex-shrink: 0;
+        margin-left: 1rem;
+    }
+
+    .jewlr-custom-banner__text {
+        margin: 0;
+    }
+}
+
+/* Breakpoint: Widescreen and up */
+@media screen and (min-width: 90rem) {
+    .jewlr-custom-banner__content {
+        padding: 60px;
+    }
+
+    /* Scaling Ratios based on user request: 72/64 = 1.125, 34/28 = ~1.214 */
+    .jewlr-custom-banner__heading {
+        font-size: calc(var(--banner-heading-size-desktop) * 1.125);
+    }
+
+    .jewlr-custom-banner__text {
+        font-size: calc(var(--banner-text-size-desktop) * 1.214);
+    }
+}
+
+/* Gradient Background Support */
+.jewlr-custom-banner--gradient {
+    min-height: 30rem;
+}
+
+.jewlr-custom-banner--gradient .jewlr-custom-banner__media {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+
+.jewlr-custom-banner--gradient .jewlr-custom-banner__content {
+    position: relative;
+    z-index: 1;
+}
+
+@media screen and (max-width: 47.9rem) {
+    .jewlr-custom-banner--gradient {
+        min-height: 20rem;
+    }
+}
+
+@media screen and (min-width: 48rem) {
+
+    /* Reset content position for desktop to maintain centering */
+    .jewlr-custom-banner--gradient .jewlr-custom-banner__content {
+        position: absolute;
+    }
+
+    .jewlr-custom-banner--video .jewlr-custom-banner__content {
+        position: absolute;
+    }
+}
+
+.jewlr-custom-banner__icon {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+.jewlr-custom-banner__gradient {
+    width: 100%;
+    height: 100%;
+}
